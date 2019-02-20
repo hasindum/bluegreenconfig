@@ -2,20 +2,20 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: ghost
-  namespace: demonew
+  name: bluegreen
+  namespace: bluegreen
   annotations:
     flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:1.21.*
 spec:
-  releaseName: ghost
+  releaseName: bluegreen
   chart:
-    git: ssh://git@github.com/weaveworks/flux-get-started
+    git: ssh://git@github.com/hasindum/bluegreenconfig
     ref: master
-    path: charts/ghost
+    path: charts/bluegreen
   values:
-    image: bitnami/ghost:1.21.6-r0
-    ghostPort: 85
+    deployment:
+      image: nginx:stable
     persistence:
       enabled: false
     resources:
@@ -23,6 +23,3 @@ spec:
         memory: 32Mi
         cpu: 10m
     serviceType: ClusterIP
-    mariadb:
-      persistence:
-        enabled: false
