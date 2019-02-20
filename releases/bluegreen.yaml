@@ -14,7 +14,8 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    # image: bitnami/ghost:1.21.6-r0
+    deployment:
+      image: nginx:stable
     # persistence:
     #   enabled: false
     # resources:
