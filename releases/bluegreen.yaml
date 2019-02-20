@@ -4,9 +4,9 @@ kind: HelmRelease
 metadata:
   name: bluegreen
   namespace: bluegreen
-  # annotations:
-  #   flux.weave.works/automated: "false"
-  #   flux.weave.works/tag.chart-image: glob:1.21.*
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:1.21.*
 spec:
   releaseName: bluegreen
   chart:
@@ -16,13 +16,10 @@ spec:
   values:
     deployment:
       image: nginx:stable
-    # persistence:
-    #   enabled: false
-    # resources:
-    #   requests:
-    #     memory: 32Mi
-    #     cpu: 10m
-    # serviceType: ClusterIP
-    # mariadb:
-    #   persistence:
-    #     enabled: false
+    persistence:
+      enabled: false
+    resources:
+      requests:
+        memory: 32Mi
+        cpu: 10m
+    serviceType: ClusterIP
