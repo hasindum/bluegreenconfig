@@ -1,0 +1,27 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: bluegreen
+  namespace: bluegreen
+  # annotations:
+  #   flux.weave.works/automated: "false"
+  #   flux.weave.works/tag.chart-image: glob:1.21.*
+spec:
+  releaseName: bluegreen
+  chart:
+    git: ssh://git@github.com/hasindum/bluegreenconfig
+    ref: master
+    path: charts/bluegreen
+  values:
+    # image: bitnami/ghost:1.21.6-r0
+    # persistence:
+    #   enabled: false
+    # resources:
+    #   requests:
+    #     memory: 32Mi
+    #     cpu: 10m
+    # serviceType: ClusterIP
+    # mariadb:
+    #   persistence:
+    #     enabled: false
