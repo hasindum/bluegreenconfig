@@ -6,7 +6,7 @@ metadata:
   namespace: bluegreen
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: hazzindu/nginx:1.0.*
+    flux.weave.works/tag.chart-image: glob:1.0.*
 spec:
   releaseName: bluegreen
   chart:
