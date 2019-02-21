@@ -5,7 +5,7 @@ metadata:
   name: bluegreen
   namespace: bluegreen
   annotations:
-    flux.weave.works/automated: "false"
+    flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:dev-*
 spec:
   releaseName: bluegreen
