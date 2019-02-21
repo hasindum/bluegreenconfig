@@ -14,7 +14,7 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    image: hazzindu/bluegreen:dev-1.0.0
+    image: hazzindu/podinfo:dev-2ejdoypu
     persistence:
       enabled: false
     resources:
