@@ -19,7 +19,7 @@ spec:
       containers:
         - name: {{ template "blue-green.name" . }}-blue
           image:  "{{ .Values.image }}"
-          imagePullPolicy: Always
+          imagePullPolicy: "{{ .Values.imagePullPolicy }}"
           ports:
             - name: http
               containerPort: 80
