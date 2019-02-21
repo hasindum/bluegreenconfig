@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: {{ template "blue-green.name" . }}-green
-          image: nginx:stable
+          image: "{{ .Values.deployment.image }}"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
