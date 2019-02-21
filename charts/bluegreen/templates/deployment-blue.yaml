@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: {{ template "blue-green.name" . }}-blue
-          image:  "{{ .Values.deployment.image }}"
+          image:  "{{ .Values.image }}"
           imagePullPolicy: Always
           ports:
             - name: http

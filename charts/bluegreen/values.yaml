@@ -4,10 +4,12 @@
 
 replicaCount: 2
 
+image: hazzindu/nginx:1.0.0
+
 deployment:
   method: bluegreen
   active: blue
-  image: hazzindu/nginx:1.0.0
+
 
 ingress:
   strategicDomain: 

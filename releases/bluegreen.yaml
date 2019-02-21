@@ -14,8 +14,7 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    deployment:
-      image: hazzindu/nginx:1.0.0
+    image: hazzindu/nginx:1.0.0
     persistence:
       enabled: false
     resources:
