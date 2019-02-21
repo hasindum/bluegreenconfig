@@ -15,7 +15,7 @@ spec:
     path: charts/bluegreen
   values:
     deployment:
-      image: nginx:stable
+      image: hazzindu/nginx:1.0.0
     persistence:
       enabled: false
     resources:
