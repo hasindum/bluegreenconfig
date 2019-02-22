@@ -1,8 +1,10 @@
+{{- if eq .Values.deployment.method "bluegreen"}}
 {{- $fullName := .Release.Name -}}
 apiVersion: v1
 kind: Service
 metadata:
   name: {{ $fullName }}-green
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ template "blue-green.name" . }}
     chart: {{ template "blue-green.chart" . }}
@@ -18,3 +20,4 @@ spec:
     app: {{ template "blue-green.name" . }}
     release: {{ .Release.Name }}
     slot: green
+{{- end}}

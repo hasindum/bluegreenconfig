@@ -3,14 +3,14 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 2
+namespace: bluegreen
 
 image: hazzindu/nginx:1.0.0
-imagePullPolicy: IfNotPresent
 
 deployment:
-  method: bluegreen
-  active: blue
-
+  method: rolling-upgrade
+#  method: bluegreen
+#  active: blue
 
 ingress:
   strategicDomain: 

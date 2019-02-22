@@ -3,6 +3,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "blue-green.fullname" . }}-green
+  namespace: {{ .Values.namespace }}
   labels:
     release: {{ .Release.Name }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
@@ -19,7 +20,7 @@ spec:
       containers:
         - name: {{ template "blue-green.name" . }}-green
           image: "{{ .Values.image }}"
-          imagePullPolicy: "{{ .Values.imagePullPolicy }}"
+          imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 80
