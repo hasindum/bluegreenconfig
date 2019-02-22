@@ -6,7 +6,7 @@ metadata:
   namespace: bluegreen
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:dev-*
+    flux.weave.works/tag.chart-image: semver:~1.0
 spec:
   releaseName: bluegreen
   chart:
@@ -14,7 +14,7 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    image: hazzindu/bluegreen:dev-2ejdoypuu
+    image: hazzindu/bluegreen:1.0.0
     persistence:
       enabled: false
     resources:
