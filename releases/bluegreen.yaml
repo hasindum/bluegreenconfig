@@ -14,7 +14,7 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    image: hazzindu/bluegreen:1.0.4
+    image: hazzindu/bluegreen:1.0.5
     persistence:
       enabled: false
     resources:
