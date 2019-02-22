@@ -15,6 +15,10 @@ spec:
     path: charts/bluegreen
   values:
     image: hazzindu/bluegreen:1.0.4
+    deployment:
+      # method: rolling-upgrade
+      method: bluegreen
+      active: blue
     persistence:
       enabled: false
     resources:
