@@ -10,18 +10,29 @@ image: hazzindu/nginx:1.0.0
 deployment:
   method: rolling-upgrade
 #  method: bluegreen
-#  active: blue
+#  active: green
 
 ingress:
   strategicDomain: 
     name: www.abc.com
     path: "/"
-    tls: true
+#    tls: true
+    ssl: true
+    httpsOnly: true
+    httpsBackend: false
   tacticalDomain: 
     name: www.abc.tech
     path: "/"
-    tls: true
+#    tls: true
+    ssl: true
+    httpsOnly: true
+    httpsBackend: false
+
   technicalDomain: 
     name: www.abc.io
     path: "/"
-    tls: false
+#    tls: false
+    ssl: false
+    httpsOnly: false
+    httpsBackend: false
+

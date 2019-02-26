@@ -9,6 +9,10 @@ metadata:
     app: {{ template "blue-green.name" . }}
     chart: {{ template "blue-green.chart" . }}
     release: {{ .Release.Name }}
+    {{- if or (eq .Values.ingress.strategicDomain.ssl true) (eq .Values.ingress.tacticalDomain.ssl true) (eq .Values.ingress.technicalDomain.ssl true) }}
+    ssl: "true"
+    httpsOnly: "true"
+    {{- end }}
 spec:
   rules:
   {{- if .Values.ingress.strategicDomain.name }}
