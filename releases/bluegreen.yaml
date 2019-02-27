@@ -18,7 +18,7 @@ spec:
     deployment:
       # method: rolling-upgrade
       method: bluegreen
-      active: blue
+      active: green
     persistence:
       enabled: false
     resources:
