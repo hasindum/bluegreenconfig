@@ -8,7 +8,7 @@ namespace: tiller-world
 image: hazzindu/nginx:1.0.0
 
 deployment:
-  method: rolling-upgrade
+  # method: rolling-upgrade
 #  method: bluegreen
 #  active: green
 
