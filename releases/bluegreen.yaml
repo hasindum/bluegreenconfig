@@ -3,7 +3,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: bluegreen
-  namespace: sampleapp
+  namespace: tiller-world
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: semver:~1.0
@@ -16,9 +16,9 @@ spec:
   values:
     image: hazzindu/bluegreen:1.0.8
     deployment:
-      method: rolling-upgrade
-      # method: bluegreen
-      # active: blue
+      # method: rolling-upgrade
+      method: bluegreen
+      active: green
     persistence:
       enabled: false
     resources:
