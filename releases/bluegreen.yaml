@@ -14,8 +14,12 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
+<<<<<<< HEAD
     image: hazzindu/bluegreen:1.0.8
     activeImage
+=======
+    image: hazzindu/bluegreen:1.0.9
+>>>>>>> 93e8fa98e755ed5733083341d8adbe081dc4e6fe
     deployment:
       # method: rolling-upgrade
       method: bluegreen
