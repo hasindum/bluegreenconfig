@@ -6,7 +6,7 @@ metadata:
   namespace: tiller-world
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: hazzindu/bluegreen:1.0.4
+    flux.weave.works/tag.chart-image: hazzindu/bluegreen:1.0.5
 spec:
   releaseName: bluegreen
   chart:
@@ -14,7 +14,7 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    image: hazzindu/bluegreen:1.0.4
+    image: hazzindu/bluegreen:1.0.5
     deployment:
       # method: rolling-upgrade
       method: bluegreen
