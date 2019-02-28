@@ -19,7 +19,7 @@ spec:
     deployment:
       # method: rolling-upgrade
       method: bluegreen
-      active: green
+      active: blue
       activeImage: hazzindu/bluegreen:1.0.8
     persistence:
       enabled: false
