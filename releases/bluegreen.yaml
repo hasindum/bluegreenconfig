@@ -5,7 +5,7 @@ metadata:
   name: bluegreen
   namespace: tiller-world
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: semver:~1.0
 spec:
   releaseName: bluegreen
