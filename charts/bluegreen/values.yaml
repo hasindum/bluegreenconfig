@@ -9,9 +9,9 @@ image: hazzindu/bluegreen:1.0.2
 
 deployment:
   # method: rolling-upgrade
-#  method: bluegreen
-#  active: blue
-#  activeImage: hazzindu/bluegreen:1.0.1
+ method: bluegreen
+ active: blue
+ activeImage: hazzindu/bluegreen:1.0.8
 
 ingress:
   strategicDomain: 
