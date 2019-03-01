@@ -1,4 +1,4 @@
-{{- if eq .Values.deployment.method "rolling-upgrade"}}
+{{- if eq .Values.service.deployment.method "rolling-upgrade"}}
 {{- $fullName := .Release.Name -}}
 apiVersion: v1
 kind: Service
