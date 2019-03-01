@@ -1,4 +1,4 @@
-{{- if eq .Values.service.deployment.method "rolling-upgrade"}}
+{{- if eq .Values.deployment.method "rolling-upgrade"}}
 {{- $fullName := .Release.Name -}}
 apiVersion: extensions/v1beta1
 kind: Ingress

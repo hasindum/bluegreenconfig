@@ -1,4 +1,4 @@
-{{- if eq .Values.service.deployment.method "rolling-upgrade"}}
+{{- if eq .Values.deployment.method "rolling-upgrade"}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: {{ template "blue-green.name" . }}
-          image: "{{ .Values.service.image }}"
+          image: "{{ .Values.image }}"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

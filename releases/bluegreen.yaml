@@ -14,9 +14,7 @@ spec:
     ref: master
     path: charts/bluegreen
   values:
-    service:
-    - name: service1
-      image: hazzindu/bluegreen:1.0.17
+      image: hazzindu/bluegreen:1.0.16
       deployment:
         # method: rolling-upgrade
         method: bluegreen

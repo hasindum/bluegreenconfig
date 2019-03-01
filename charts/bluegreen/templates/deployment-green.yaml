@@ -1,4 +1,4 @@
-{{- if eq .Values.service.deployment.method "bluegreen"}}
+{{- if eq .Values.deployment.method "bluegreen"}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -19,11 +19,11 @@ spec:
     spec:
       containers:
         - name: {{ template "blue-green.name" . }}-green
-          {{- if eq .Values.service.deployment.active "green"}}
-          image: "{{ .Values.service.deployment.activeImage }}"
+          {{- if eq .Values.deployment.active "green"}}
+          image: "{{ .Values.deployment.activeImage }}"
           {{- end}}
-          {{- if eq .Values.service.deployment.active "blue"}}
-          image: "{{ .Values.service.image }}"
+          {{- if eq .Values.deployment.active "blue"}}
+          image: "{{ .Values.image }}"
           {{- end}}
           imagePullPolicy: IfNotPresent
           ports:

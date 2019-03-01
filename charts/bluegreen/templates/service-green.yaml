@@ -1,4 +1,4 @@
-{{- if eq .Values.service.deployment.method "bluegreen"}}
+{{- if eq .Values.deployment.method "bluegreen"}}
 {{- $fullName := .Release.Name -}}
 apiVersion: v1
 kind: Service
