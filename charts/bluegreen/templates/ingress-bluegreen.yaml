@@ -1,4 +1,4 @@
-{{- if eq .Values.deployment.method "bluegreen"}}
+{{- if eq .Values.service.deployment.method "bluegreen"}}
 {{- $fullName := .Release.Name -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -17,7 +17,7 @@ spec:
       paths:
         - path: {{ .Values.ingress.strategicDomain.path | default "/" }}
           backend:
-            serviceName: {{ $fullName }}-{{ .Values.deployment.active }}
+            serviceName: {{ $fullName }}-{{ .Values.service.deployment.active }}
             servicePort: http
   {{- end }}
   {{- if .Values.ingress.tacticalDomain.name }}
@@ -26,7 +26,7 @@ spec:
       paths:
         - path: {{ .Values.ingress.tacticalDomain.path | default "/" }}
           backend:
-            serviceName: {{ $fullName }}-{{ .Values.deployment.active }}
+            serviceName: {{ $fullName }}-{{ .Values.service.deployment.active }}
             servicePort: http
   {{- end }}
   {{- if .Values.ingress.technicalDomain.name }}
@@ -35,7 +35,7 @@ spec:
       paths:
         - path: {{ .Values.ingress.technicalDomain.path | default "/" }}
           backend:
-            serviceName: {{ $fullName }}-{{ .Values.deployment.active }}
+            serviceName: {{ $fullName }}-{{ .Values.service.deployment.active }}
             servicePort: http
   {{- end }}
 {{- end }}
