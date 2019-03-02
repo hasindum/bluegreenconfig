@@ -19,7 +19,7 @@ spec:
         # method: rolling-upgrade
         method: bluegreen
         active: blue
-        activeImage: hazzindu/bluegreen:1.0.8
+        activeImage: hazzindu/bluegreen:1.0.15
       persistence:
         enabled: false
       resources:

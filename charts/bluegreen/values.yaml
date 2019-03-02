@@ -5,13 +5,13 @@
 replicaCount: 2
 namespace: tiller-world
 
-image: hazzindu/bluegreen:1.0.2
+image: hazzindu/bluegreen:1.0.15
 
 deployment:
   # method: rolling-upgrade
  method: bluegreen
  active: blue
- activeImage: hazzindu/bluegreen:1.0.8
+ activeImage: hazzindu/bluegreen:1.0.15
 
 ingress:
   strategicDomain: 
