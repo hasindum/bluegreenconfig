@@ -5,6 +5,15 @@
 replicaCount: 2
 namespace: tiller-world
 
+<<<<<<< HEAD
+image: hazzindu/bluegreen:1.0.15
+
+deployment:
+ # method: rolling-upgrade
+  method: bluegreen
+  active: green
+  activeImage: hazzindu/bluegreen:1.0.15
+=======
 image: hazzindu/bluegreen:1.0.15
 
 deployment:
@@ -12,27 +21,30 @@ deployment:
  method: bluegreen
  active: blue
  activeImage: hazzindu/bluegreen:1.0.15
+>>>>>>> 8fce78b6c24aec8fa6e44db4d6aff53a5227a8e5
 
 ingress:
   strategicDomain: 
+    enabled: true
     name: www.abc.com
     path: "/"
-#    tls: true
-    ssl: true
+    ssl: "true"
     httpsOnly: true
     httpsBackend: false
+
   tacticalDomain: 
+    enabled: true
     name: www.abc.tech
     path: "/"
-#    tls: true
+    tls: true
     ssl: true
     httpsOnly: true
     httpsBackend: false
 
   technicalDomain: 
+    enabled: true
     name: www.abc.io
     path: "/"
-#    tls: false
     ssl: false
     httpsOnly: false
     httpsBackend: false

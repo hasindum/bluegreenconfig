@@ -19,8 +19,22 @@ spec:
           backend:
             serviceName: {{ $fullName }}-{{ .Values.deployment.active }}
             servicePort: http
+  - host: blue-{{ .Values.ingress.strategicDomain.name }}
+    http:
+      paths:
+        - path: {{ .Values.ingress.strategicDomain.path | default "/" }}
+          backend:
+            serviceName: {{ $fullName }}-blue
+            servicePort: http
+  - host: green-{{ .Values.ingress.strategicDomain.name }}
+    http:
+      paths:
+        - path: {{ .Values.ingress.strategicDomain.path | default "/" }}
+          backend:
+            serviceName: {{ $fullName }}-green
+            servicePort: http
   {{- end }}
-  {{- if .Values.ingress.tacticalDomain.name }}
+  {{- if .Values.ingress.tacticalDomain }}
   - host: {{ .Values.ingress.tacticalDomain.name }}
     http:
       paths:
